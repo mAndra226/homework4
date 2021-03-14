@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>CoffeeRun</title>
+</head>
+<body class="container">
+    <header>
+        <h1>Coffeerun</h1>
+    </header>
+    
+    <section>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form data-coffee-order="form">
+                    <!--Input Elements Here-->
+                    <div class="form-group">
+                        <label for="coffeeOrder">Coffee Order</label>
+                        <input class="form-control" name="coffee" id="coffeeOrder" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input class="form-control" typee="email" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com">
+                    </div>
+                    <!--Radio Buttons for cup size-->
+                    <div class="radio">
+                        <label><input type="radio" name="size" value="short"> Short</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="size" value="tall" checked> Tall</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="size" value="grande"> Grande</label>
+                    </div>
+                    <!--Dropdown Menu-->
+                    <div class="form-group">
+                        <label for="flavorShot">Flavor Shot</label>
+                        <select id="flavorShot" class="form-control" name="flavor">
+                            <option value="">None</option>
+                            <option value="caramel">Caramel</option>
+                            <option value="almond">Almond</option>
+                            <option value="mocha">Mocha</option>
+                            <option value="Pumpkin-spice" selected>Pumpkin-spice</option>
+                        </select>
+                    </div>
+                    <!--Range Slider for caffein rating-->
+                    <div class="form-group">
+                        <label for="strengthLevel">Caffeine Rating</label>
+                        <input name="strength" id="strengthLevel" type="range" value="30">
+                    </div>
+                    <!--Submit/Reset Buttons-->
+                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
+                </form>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h4>Pending Orders: </h4>
+                <div data-coffee-order="checklist" class="checkbox"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JQuery link and Js links-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js" charset="utf-8"></script>
+    <script src="scripts/checklist.js" charset="utf-8"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+</html>
