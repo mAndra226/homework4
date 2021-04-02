@@ -1,6 +1,21 @@
 (function (window) {
     'use strict';
 
+    var firebaseConfig = {
+        apiKey: "AIzaSyDZ-K9TuOtct6in2CBG0WdhjVcSuUdIc0U",
+        authDomain: "coffee-run-f9ae4.firebaseapp.com",
+        databaseURL: "https://coffee-run-f9ae4.firebaseio.com",
+        projectId: "coffee-run-f9ae4",
+        storageBucket: "coffee-run-f9ae4.appspot.com",
+        messagingSenderId: "831111311806",
+        appId: "1:831111311806:web:dc639897a3bd250feb89ef",
+        measurementId: "G-W72V0CV5W9"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
     var App = window.App || {};
     var $ = window.jQuery;
 
@@ -37,19 +52,6 @@
         });
     };
 
-    var firebaseConfig = {
-        apiKey: "AIzaSyDZ-K9TuOtct6in2CBG0WdhjVcSuUdIc0U",
-        authDomain: "coffee-run-f9ae4.firebaseapp.com",
-        databaseURL: "https://coffee-run-f9ae4.firebaseio.com",
-        projectId: "coffee-run-f9ae4",
-        storageBucket: "coffee-run-f9ae4.appspot.com",
-        messagingSenderId: "831111311806",
-        appId: "1:831111311806:web:dc639897a3bd250feb89ef",
-        measurementId: "project-831111311806",
-      };
-
-      // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
     App.RemoteDataStore = RemoteDataStore;
     window.App = App;
 })(window);
