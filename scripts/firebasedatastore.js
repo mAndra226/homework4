@@ -1,24 +1,14 @@
 
 (function (window) {
   'use strict';
-
+​
   var App = window.App || {};
   var $ = window.jQuery;
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyCOktD9sENOFeETtjjt0EbF1id3k7B-gzc",
-    authDomain: "coffee-orders-27a40.firebaseapp.com",
-    projectId: "coffee-orders-27a40",
-    storageBucket: "coffee-orders-27a40.appspot.com",
-    messagingSenderId: "59601023709",
-    appId: "1:59601023709:web:ffe75fb937851e206ea134"
-  };
 
   class FireBaseDataStore {
       constructor() {
         console.log('running the FireBaseDataStore function');
-        firebase.initializeApp(firebaseConfig);
-        // firebase.initializeApp(App.FirebaseConfig.firebaseConfig);
+        firebase.initializeApp(window.FireBaseConfig);
         this.firestore = firebase.firestore();
       }
 
@@ -26,7 +16,7 @@
           console.log('firebase add  ')
           const docRef = this.firestore.doc(`orders/${this.makeDocHash(20)}`);
           return docRef.set(val); // i realize that could just use .add, but wanted to try .set instead.
-          //return this.firestore.doc(`orders/${key}`).set(val);
+        // return this.firestore.doc(`orders/${key}`).set(val);
       }
       async get(email, cb)  { 
           const docRef = this.firestore.collection(`orders`);
@@ -57,7 +47,7 @@
           return result;
        }
   }
-  
+
   App.FireBaseDataStore = FireBaseDataStore;
   window.App = App;
 })(window);
